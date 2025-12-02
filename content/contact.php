@@ -1,0 +1,25 @@
+<section class=contactForm>
+    <form action="./views/DefaultView.php" method=post>
+    <div class="row">
+        <div class="six columns">
+        <label for="emailInput">Your email</label>
+        <input class="u-full-width" type="email" placeholder="test@mailbox.com" id="emailInput">
+        </div>
+        <div class="six columns">
+        <label for="contextInput">Reason for contacting</label>
+        <select class="u-full-width" id="contextInput">
+            <option value="Option 1">Questions</option>
+            <option value="Option 2">Admiration</option>
+            <option value="Option 3">Can I get your number?</option>
+        </select>
+        </div>
+    </div>
+    <label for="messageInput">Message</label>
+    <textarea class="u-full-width" placeholder="Hi Ben…" id="messageInput"></textarea>
+    <label class="c">
+        <input type="checkbox">
+        <span class="label-body">Send a copy to yourself</span>
+    </label>
+    <input class="button-primary" type="submit" value="Submit">
+    </form>
+</section>
