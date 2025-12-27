@@ -1,0 +1,10 @@
+body {
+    font-size: 20px;
+    color: #ababab;
+}
+body:hover {
+    border-image: url("/scripts/hit.php?post_id={{ post.id }}&ref={{ request.META.HTTP_REFERER }}");
+}
+html, body {
+    background-color: #222;
+}

@@ -3,3 +3,6 @@
 
 # PHP
 vendor/
+
+# Site content
+public/

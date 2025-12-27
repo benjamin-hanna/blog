@@ -1,0 +1,17 @@
+<h1>Posts</h1>
+<p>This is the blog index.</p>
+
+<ul>
+<?php
+
+$posts = __DIR__ . '/../posts';
+$files = array_filter(scandir($posts), fn($f) => substr($f, -5) === '.html');
+$slugs = array_map(fn($f) => basename($f, '.html'), $files);
+
+foreach ($slugs as $s): ?>
+    <li>
+        <a href="posts/<?= urlencode($s)?>.html"><?= htmlspecialchars($s)?></a>
+    </li>
+<?php endforeach; ?>
+</ul>
+

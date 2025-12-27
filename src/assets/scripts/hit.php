@@ -1,4 +1,6 @@
 <?php
+// hit.php
+
 header('Content-Type: text/css');
 
 $post_id = 123;
