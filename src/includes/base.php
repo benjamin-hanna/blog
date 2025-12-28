@@ -3,7 +3,13 @@ function renderPage($file, $params = [])
 {
     extract($params);
 
-    include 'header.html';
+    $title = $params['title'];
+
+    if ($title === 'Post') {
+        include 'postHeader.html';
+    } else {
+        include 'header.html';
+    }
     ?>
     <main>
         <div class="container">
