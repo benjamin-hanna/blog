@@ -20,5 +20,10 @@ function renderPage($file, $params = [])
             </div>
         </div>
     </main>
-    <?php include 'footer.html';    
+    <?php 
+    if ($title === 'Post') {
+        include 'postFooter.html';
+    } else {
+        include 'footer.html';
+    } 
 }
