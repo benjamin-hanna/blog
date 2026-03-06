@@ -8,6 +8,11 @@ body:hover {
 html, body {
     background-color: #222;
 }
+pre code {
+    background-color: #222;
+    overflow-x: auto;
+    border: none;
+}
 footer .twelve.columns {
     text-align: center;
 }
