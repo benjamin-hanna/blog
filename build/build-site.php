@@ -96,5 +96,3 @@ file_put_contents('../public/now.html', render('../src/content/now.html', ['titl
 file_put_contents('../public/colophon.html', render('../src/content/colophon.html', ['title' => 'Colophon']));
 file_put_contents('../public/contact.html', render('../src/content/contact.html', ['title' => 'Contact']));
 file_put_contents('../public/posts.html', render('../src/content/posts.html', ['title' => 'Posts']));
-
-// shell_exec("./deploy-prod.sh");
