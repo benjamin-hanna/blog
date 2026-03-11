@@ -13,6 +13,21 @@ code {
     overflow-x: auto;
     border: none;
 }
+header .twelve.columns {
+    text-align: center;
+}
 footer .twelve.columns {
     text-align: center;
+}
+.logo {
+  width: 120px;      /* or 3rem, 10vw, etc. */
+  height: auto;      /* keeps aspect ratio */
+}
+hr { margin: 1.5em auto;
+  border: 0;
+  border-bottom-width: 0px;
+  border-bottom-style: none;
+  border-bottom-color: currentcolor;
+  border-bottom: 0.15em dotted #999;
+  border-bottom-color: rgb(153, 153, 153);
 }

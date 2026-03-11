@@ -15,7 +15,6 @@ $public = __DIR__ . '/../public';
 /**
  *  Start delete public folder contents
  */
-
 if (!is_dir($public)) {
     mkdir($public, 0755, true);
 } else {
@@ -38,24 +37,11 @@ if (!is_dir($public)) {
  */
 
 /**
- *  Start .md to .html conversion
+ *  Start blog post migration / conversion
  */
+shell_exec("./migrate-content.sh");
 
-$pubPosts = __DIR__ . '/../public/posts';
-
-if (!is_dir($pubPosts)) {
-    mkdir($pubPosts, 0755, true);
-}
-
-$pubImgs = __DIR__ . '/../public/posts/img/posts';
-
-if (!is_dir($pubImgs)) {
-    mkdir($pubImgs, 0755, true);
-}
-
-shell_exec("cp ../posts/img/posts/* ../public/posts/img/posts/");
-
-$posts = __DIR__ . '/../posts';
+$posts = $public . '/posts';
 
 $files = array_filter(scandir($posts), fn($f) => substr($f, -3) === '.md');
 
@@ -69,10 +55,13 @@ foreach ($files as $f) {
     $out = basename($f, '.md') . '.html';
 
     file_put_contents('../public/posts/' . $out, $html);
-    file_put_contents('../public/posts/' .$out, render('../public/posts/' .$out, ['title' => 'Post']));
+    file_put_contents('../public/posts/' . $out, render('../public/posts/' .$out, ['title' => 'Post']));
+
+    $path = $posts . '/' . $f;
+    shell_exec("rm $path");
 }
 /**
- *  End .md to .html coversion
+ *  End blog post migration / conversion
  */
 
 $assets = __DIR__ . '/../public/assets';
@@ -82,6 +71,14 @@ if (!is_dir($assets)) {
 }
 
 shell_exec("cp -r ../src/assets/css/ ../public/assets/");
+
+$images = __DIR__ . '/../public/assets/img';
+
+if (!is_dir($images)) {
+    mkdir($images, 0755, true);
+}
+
+shell_exec("cp -r ../src/assets/img/ ../public/assets/");
 
 $scripts = __DIR__ . '/../public/assets/scripts';
 
