@@ -19,6 +19,15 @@ header .twelve.columns {
 footer .twelve.columns {
     text-align: center;
 }
+footer .four.columns {
+    float: none;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer .four.columns img {
+    display: inline-block;
+}
 hr { 
   margin: 1.5em auto;
   border: 0;
