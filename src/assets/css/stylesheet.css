@@ -19,10 +19,6 @@ header .twelve.columns {
 footer .twelve.columns {
     text-align: center;
 }
-.logo {
-    width: 120px;
-    height: auto;
-}
 hr { 
   margin: 1.5em auto;
   border: 0;
@@ -36,4 +32,11 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+.footnotes li p {
+  display: inline;
+}
+.logo {
+  width: 120px;
+  height: auto;
 }

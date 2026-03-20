@@ -18,6 +18,12 @@ assets:
     dest: assets/img/php-logo.svg
   - src: src/assets/scripts/hit.php
     dest: assets/scripts/hit.php
+  - src: src/assets/img/mayo_1_3.png
+    dest: assets/img/mayo_1_3.png
+  - src: src/assets/img/mayo_2_3.png
+    dest: assets/img/mayo_2_3.png
+  - src: src/assets/img/mayo_3_3.png
+    dest: assets/img/mayo_3_3.png
 
 pages:
   - src: src/pages/about.html 
