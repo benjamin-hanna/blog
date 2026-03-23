@@ -1,7 +1,5 @@
 <?php
 
-$GLOBALS['outputDir'] = $outputDir;
-
 require 'vendor/autoload.php';
 require_once 'src/includes/base.php';
 
@@ -36,7 +34,7 @@ foreach ($config['assets'] as $asset) {
 foreach ($config['pages'] as $page) {
     $dest = "$outputDir/{$page['dest']}";
     ob_start();
-    renderPage($page['src'], $page['title']);
+    renderPage($page['src'], $page['title'], $dest);
     file_put_contents($dest, ob_get_clean());
 }
 
@@ -59,13 +57,14 @@ foreach ($posts as $p) {
     
     $dest = "$outputDir/posts/" . basename($p, '.md') . '.html';
     ob_start();
-    renderPage($tmp, 'Post');
+    renderPage($tmp, 'Post', $dest);
     file_put_contents($dest, ob_get_clean());
     
     unlink($tmp);
 }
 
 $post_index = $config['post_index'];
+$dest = "$outputDir/{$post_index['dest']}";
 ob_start();
-renderPage($post_index['src'], $post_index['title']);
-file_put_contents("$outputDir/{$post_index['dest']}", ob_get_clean());
+renderPage($post_index['src'], $post_index['title'], $dest);
+file_put_contents($dest, ob_get_clean());

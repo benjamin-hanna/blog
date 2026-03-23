@@ -1,12 +1,11 @@
 <?php
 
-function renderPage($file, $title)
+function renderPage($file, $title, $dest)
 {
-    if ($title === 'Post') {
-        include 'postHeader.html';
-    } else {
-        include 'header.html';
-    }
+    $depth = substr_count($dest, '/') - 1;
+    $root = str_repeat('../', $depth);
+
+    include 'header.html';
     ?>
     <main>
         <div class="container">
@@ -18,9 +17,5 @@ function renderPage($file, $title)
         </div>
     </main>
     <?php 
-    if ($title === 'Post') {
-        include 'postFooter.html';
-    } else {
-        include 'footer.html';
-    } 
+    include 'footer.html';
 }
