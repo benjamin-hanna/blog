@@ -15,7 +15,9 @@
   <div class="container">
     <div class ="row">
       <div class="twelve columns">
-
+        <?php if ($depth > 0): ?>
+          <a href="<?= $root ?>posts.html">Back</a>
+        <?php endif; ?>      
       </div>
     </div>
   </div>
