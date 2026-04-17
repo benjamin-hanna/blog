@@ -18,8 +18,8 @@ assets:
     dest: assets/img/php-logo.svg
   - src: src/assets/scripts/track.php
     dest: assets/scripts/track.php
-  - src: src/assets/img/mayo.png
-    dest: assets/img/mayo.png
+  - src: src/assets/img/mayo.webp
+    dest: assets/img/mayo.webp
 
 pages:
   - src: src/pages/about.html 
