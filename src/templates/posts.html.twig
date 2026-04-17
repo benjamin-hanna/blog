@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<h1>Posts</h1>
+<ul>
+    {% for slug in slugs %}
+    <li>
+        <a href="posts/{{ slug | url_encode }}.html">{{ slug }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

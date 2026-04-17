@@ -22,29 +22,33 @@ assets:
     dest: assets/img/mayo.webp
 
 pages:
-  - src: src/pages/about.html 
+  - src: content/pages/about.md 
     dest: index.html
     title: About
-  - src: src/pages/now.html
+    template: about.html.twig
+  - src: content/pages/now.md
     dest: now.html
     title: Now
-  - src: src/pages/colophon.html 
+    template: now.html.twig
+  - src: content/pages/colophon.md 
     dest: colophon.html
     title: Colophon
-  - src: src/pages/contact.html
+    template: colophon.html.twig
+  - src: content/pages/contact.md
     dest: contact.html
     title: Contact
+    template: contact.html.twig
 
+posts: content/posts
 
-posts_dir: blog/posts
-
-posts:
-  - src: blog/posts/img/demon-1.png
+posts_src:
+  - src: content/posts/img/demon-1.png
     dest: posts/img/demon-1.png
-  - src: blog/posts/src/spitz-demon-1.scm
+  - src: content/posts/src/spitz-demon-1.scm
     dest: posts/src/spitz-demon-1.scm
 
 post_index:
   src: src/pages/posts.html
   dest: posts.html
   title: Posts
+  template: posts.html.twig

@@ -3,6 +3,7 @@
         "erusev/parsedown": "^1.8",
         "erusev/parsedown-extra": "^0.9.0",
         "mihaeu/html-formatter": "*",
-        "symfony/yaml": "^7.4"
+        "symfony/yaml": "^7.4",
+        "twig/twig": "^3.24"
     }
 }

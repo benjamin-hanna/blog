@@ -4,8 +4,8 @@
 # PHP
 vendor/
 
-# Site content
+# Site displayed content
 public/
 
-# Blog posts
-blog/
+# Site source content
+content/
