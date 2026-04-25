@@ -42,10 +42,10 @@ pages:
 posts: content/posts
 
 posts_src:
-  - src: content/posts/img/demon-1.png
-    dest: posts/img/demon-1.png
-  - src: content/posts/src/spitz-demon-1.scm
-    dest: posts/src/spitz-demon-1.scm
+  - src: content/posts/img/graph.png
+    dest: posts/img/graph.png
+  - src: content/posts/src/dice-game.scm
+    dest: posts/src/dice-game.scm
 
 post_index:
   src: src/pages/posts.html
