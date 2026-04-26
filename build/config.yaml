@@ -12,12 +12,14 @@ assets:
     dest: assets/css/stylesheet.css
   - src: src/assets/css/skeleton.css
     dest: assets/css/skeleton.css
+  - src: src/assets/img/favicon.png
+    dest: assets/img/favicon.png
+  - src: src/assets/img/hero.webp
+    dest: assets/img/hero.webp
   - src: src/assets/img/openbsd-logo.svg
     dest: assets/img/openbsd-logo.svg
   - src: src/assets/img/php-logo.svg
     dest: assets/img/php-logo.svg
-  - src: src/assets/img/mayo.webp
-    dest: assets/img/mayo.webp
   - src: content/pages/src/maps/china.png
     dest: assets/img/maps/china.png
   - src: content/pages/src/maps/mexico.png
