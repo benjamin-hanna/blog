@@ -46,3 +46,6 @@ img {
   width: 120px;
   height: auto;
 }
+a {
+  text-decoration: none;
+}

@@ -57,6 +57,7 @@ foreach ($config['pages'] as $page) {
         'content' => $html,
         'title'   => $page['title'],
         'dest'    => $dest,
+        'depth'   => 1
     ]);
 
     file_put_contents($outputDir . '/' . $dest, $output);
@@ -65,9 +66,9 @@ foreach ($config['pages'] as $page) {
 /*
 * Blog index and content build
 */
-foreach ($config['posts_src'] as $postSrc) {
-    copy($postSrc['src'], "$outputDir/{$postSrc['dest']}");
-}
+// foreach ($config['posts_src'] as $postSrc) {
+//     copy($postSrc['src'], "$outputDir/{$postSrc['dest']}");
+// }
 
 $posts = $config['posts'];
 
@@ -78,6 +79,7 @@ $output = $twig->render('posts.html.twig', [
     'slugs'  => $slugs,
     'title'  => 'Posts',
     'dest'   => 'posts.html',
+    'depth'  => 1
 ]);
 
 file_put_contents($outputDir . '/posts.html', $output);
