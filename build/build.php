@@ -13,6 +13,9 @@ $parsedown = new ParsedownExtra();
 $loader = new \Twig\Loader\FilesystemLoader('src/templates');
 $twig = new \Twig\Environment($loader);
 
+$verbose = in_array('-v', $argv);
+vecho("Building site infrastructure");
+
 /*
 * Existing file removal
 */
@@ -24,6 +27,7 @@ if (is_dir($outputDir)) {
             is_dir($path) ? $delete($path) : unlink($path);
         }
         rmdir($dir);
+        vecho("removed: $dir");
     };
     $delete($outputDir);
 }
@@ -35,22 +39,27 @@ mkdir($outputDir, 0755, true);
 
 foreach ($config['directories'] as $dir) {
     mkdir("$outputDir/$dir", 0755, true);
+    if ($verbose) { echo "made: $outputDir/$dir\n"; }
 }
 
 foreach ($config['assets'] as $asset) {
     copy($asset['src'], "$outputDir/{$asset['dest']}");
+    vecho("copied: {$asset['src']}");
 }
 
 foreach ($config['app'] as $app) {
     copy($app['src'], "$outputDir/{$app['dest']}");
+    vecho("copied: {$asset['src']}");
 }
 
 foreach ($config['pages'] as $pages) {
     copy($pages['src'], "$outputDir/{$pages['dest']}");
+    vecho("copied: {$asset['src']}");
 }
 
 foreach ($config['files'] as $files) {
     copy($files['src'], "$outputDir/{$files['dest']}");
+    vecho("copied: {$asset['src']}");
 }
 
 /*
@@ -69,6 +78,7 @@ foreach ($config['pages'] as $page) {
     ]);
 
     file_put_contents($outputDir . '/' . $dest, $output);
+    vecho("copied page: {$page['title']}");
 }
 
 /*
@@ -99,6 +109,7 @@ $output = $twig->render('posts.html.twig', [
 ]);
 
 file_put_contents($outputDir . '/pages/blog.html', $output);
+vecho("copied page: blog");
 
 foreach ($files as $f) {;
     $md = file_get_contents($posts . '/' . $f);
@@ -120,6 +131,11 @@ foreach ($files as $f) {;
         'root'    => '../',
         'depth'   => 1,
     ]);
-
     file_put_contents($dest, $output);
+    vecho("copied post: $title");
+}
+
+function vecho($msg) {
+    global $verbose;
+    if ($verbose) echo "$msg\n";
 }
